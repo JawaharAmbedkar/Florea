@@ -1,0 +1,6 @@
+{
+  "name": "Floréa — Luxury Diamond Jewelry",
+  "description": "An ultra-luxurious, editorial diamond jewelry e-commerce website featuring ethical lab-grown diamonds, bespoke collections, interactive shopping bag, and curated journals.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
