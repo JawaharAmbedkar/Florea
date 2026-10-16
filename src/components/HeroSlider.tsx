@@ -60,13 +60,13 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onShopCollection }) => {
           onTouchEnd={handleTouchEnd}
           className="relative h-[520px] sm:h-[620px] lg:h-[720px] xl:h-[780px] rounded-xs overflow-hidden bg-[#e8e2d5] touch-pan-y"
         >
-          <AnimatePresence mode="wait">
+          <AnimatePresence mode="sync" initial={false}>
             <motion.div
               key={currentSlide.id}
-              initial={{ opacity: 0, scale: 1.02 }}
+              initial={{ opacity: 0, scale: 1.015 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+              exit={{ opacity: 0, scale: 1.01 }}
+              transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
               className="absolute inset-0"
             >
               {/* Main Image */}
