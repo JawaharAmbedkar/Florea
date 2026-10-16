@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { HERO_SLIDES } from '../data/content';
 
@@ -8,10 +8,17 @@ interface HeroSliderProps {
 
 export const HeroSlider: React.FC<HeroSliderProps> = ({ onShopCollection }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const touchStart = useRef<{ x: number; y: number } | null>(null);
 
   const currentSlide = HERO_SLIDES[currentIndex];
 
   useEffect(() => {
+    HERO_SLIDES.flatMap(({ mainImage, insetImage }) => [mainImage, insetImage])
+      .forEach((src) => {
+        const image = new Image();
+        image.src = src;
+      });
+
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % HERO_SLIDES.length);
     }, 8000);
@@ -26,11 +33,33 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onShopCollection }) => {
     setCurrentIndex((prev) => (prev + 1) % HERO_SLIDES.length);
   };
 
+  const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+    const touch = event.touches[0];
+    touchStart.current = { x: touch.clientX, y: touch.clientY };
+  };
+
+  const handleTouchEnd = (event: React.TouchEvent<HTMLDivElement>) => {
+    if (!touchStart.current) return;
+
+    const touch = event.changedTouches[0];
+    const deltaX = touch.clientX - touchStart.current.x;
+    const deltaY = touch.clientY - touchStart.current.y;
+    touchStart.current = null;
+
+    if (Math.abs(deltaX) < 50 || Math.abs(deltaX) < Math.abs(deltaY) * 1.2) return;
+    if (deltaX < 0) handleNext();
+    else handlePrev();
+  };
+
   return (
     <section className="relative bg-[#f5f2eb] pt-2 pb-8 px-2 sm:px-4 lg:px-8">
       <div className="max-w-[1800px] mx-auto">
         {/* Main Hero Container */}
-        <div className="relative h-[520px] sm:h-[620px] lg:h-[720px] xl:h-[780px] rounded-xs overflow-hidden bg-[#e8e2d5]">
+        <div
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+          className="relative h-[520px] sm:h-[620px] lg:h-[720px] xl:h-[780px] rounded-xs overflow-hidden bg-[#e8e2d5] touch-pan-y"
+        >
           <AnimatePresence mode="wait">
             <motion.div
               key={currentSlide.id}

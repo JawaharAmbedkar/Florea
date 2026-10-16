@@ -6,8 +6,8 @@ export const HERO_SLIDES: HeroSlide[] = [
     title: 'TIMELESS ELEGANCE',
     subtitle: 'CRAFTED FOR EVERLASTING MOMENTS',
     caption: 'CRAFTED FOR EVERLASTING MOMENTS',
-    mainImage: 'https://images.unsplash.com/photo-1600721391689-2564bb8055de?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwyfHx3b21hbiUyMGpld2Vscnl8ZW58MHx8fHwxNzg1NzU2MjY2fDA&ixlib=rb-4.1.0&q=85',
-    insetImage: 'https://images.unsplash.com/photo-1731406322264-dac59f83828b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHw0fHx3b21hbiUyMGpld2Vscnl8ZW58MHx8fHwxNzg1NzU2MjY2fDA&ixlib=rb-4.1.0&q=85',
+    mainImage: '/images/firstbig.jpg',
+    insetImage: '/images/firstsmall.jpg',
     collectionName: 'Ceremony & High Jewelry',
     targetCategory: 'engagement'
   },
@@ -16,8 +16,8 @@ export const HERO_SLIDES: HeroSlide[] = [
     title: 'BRILLIANT BY NATURE',
     subtitle: 'LAB-GROWN DIAMONDS, PURE PERFECTION',
     caption: 'LAB-GROWN DIAMONDS, PURE PERFECTION',
-    mainImage: 'https://images.unsplash.com/photo-1585960622850-ed33c41d6418?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGpld2Vscnl8ZW58MHx8fHwxNzg1NzU2MjY2fDA&ixlib=rb-4.1.0&q=85',
-    insetImage: 'https://images.unsplash.com/photo-1611652022419-a9419f74343d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NjZ8MHwxfHNlYXJjaHwxfHxkaWFtb25kJTIwamV3ZWxyeXxlbnwwfHx8fDE3ODU3NTYyNjZ8MA&ixlib=rb-4.1.0&q=85',
+    mainImage: '/images/secondbig.jpg',
+    insetImage: '/images/secondsmall.jpg',
     collectionName: 'Solitaire & Halo Rings',
     targetCategory: 'diamonds'
   },
@@ -26,8 +26,8 @@ export const HERO_SLIDES: HeroSlide[] = [
     title: 'LUXURY REDEFINED',
     subtitle: 'ETHICAL FINE JEWELRY WITHOUT COMPROMISE',
     caption: 'ETHICAL FINE JEWELRY WITHOUT COMPROMISE',
-    mainImage: 'https://images.unsplash.com/photo-1633934542430-0905ccb5f050?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY6NzF8MHwxfHNlYXJjaHwxfHxlbmdhZ2VtZW50JTIwcmluZ3xlbnwwfHx8fDE3ODU3NTYyNjZ8MA&ixlib=rb-4.1.0&q=85',
-    insetImage: 'https://images.pexels.com/photos/5370644/pexels-photo-5370644.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    mainImage: '/images/thirdbig.jpg',
+    insetImage: '/images/thirdsmall.avif',
     collectionName: 'Atelier Stacks & Gold',
     targetCategory: 'jewelry'
   }
